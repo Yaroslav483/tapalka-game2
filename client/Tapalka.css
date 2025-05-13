@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: gray;
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center;
+}
+
+button img {
+    margin-right: 5px; 
+}
+
+button:hover {
+    background-color: black; 
+    color: white;
+}
+
+.stats-container {
+    margin: 20px 0; 
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E0E0E0; 
+    padding: 15px 30px; 
+}
+
+.header .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info .avatar {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column; 
+    width: 30%;
+    margin: 0 auto; 
+}
+
+.shop .item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.shop button {
+    margin-left: auto;
+    padding: 10px 15px; 
+    background-color: rgb(218, 214, 214); 
+    color: black; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.shop button:hover {
+    background-color: black;
+    color: white; 
+}
+
+
+.shop button:hover {
+    background-color: #000000; 
+}
+
+.game-stats {
+    width: 60%;
+    text-align: center;
+}
+
+.game-stats .stats-container {
+    display: flex; 
+    justify-content: space-around; 
+    background: #43464D;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+.game-stats .stats-container div {
+    text-align: center; 
+    line-height: 1.5; 
+}
+
+.game-stats .stats-container hr {
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    margin: 5px 0;
+    height: 70px; 
+}
+
+
+
+
+.game-button {
+    margin: 120px auto;
+    width: 500px; 
+    height: 500px; 
+    background: lightgray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 30px; 
+    text-align: center;
+}
+
+.game-button img {
+    border-radius: 50%; 
+    width: 100%; 
+    height: 100%; 
+}
+
+
+.game-button:hover {
+    background: #d3d3d3; 
+    transform: scale(1.1); 
+}
+
+.game-button:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease; 
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 15px; 
+    text-align: center;
+    margin-top: 20px;
+}
