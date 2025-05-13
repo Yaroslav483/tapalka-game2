@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapalka Game</title>
+    <link rel="stylesheet" href="Tapalka.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">LOGO</div>
+        <div class="nav" style="margin-right: 20px;"> 
+            <a href="#">Home</a>
+            <a href="#">Market</a>
+            <a href="#">Rating</a>
+        </div>
+        <div class="user-info">
+            <img src="https://img.freepik.com/premium-vector/design-whimsical-avatar-featuring-cartoonstyle-character-with-big-expressive-eyes-icon_1076610-13180.jpg?ga=GA1.1.218113124.1739719014&semt=ais_hybrid" alt="Avatar" class="avatar">
+            <span>Tony Stark</span>
+            <span>💰 0</span>
+        </div>
+    </div>
 
+    <div class="main-container">
+        <div class="shop">
+            <div class="item">
+                <img src="https://symbl-world.akamaized.net/i/webp/eb/986169042bc5d0be021803f1afd5f9.webp" alt="Click Accelerator" style="width: 10%; height: auto;"> 
+                <span style="text-align: left;">Click Accelerator</span>
+                <div class="item-info">
+                    <div class="ability" style="text-align: left;">speed of earning x10</div>
+                    <div class="price" style="text-align: left ;">💰 40 000</div>
+                </div>
+                <button>
+                     Buy
+                </button>
+            </div>
+            <div class="item">
+                <img src="https://www.shutterstock.com/image-vector/coins-emoji-emoticons-smile-emotional-600nw-1158288052.jpg" alt="Coin Multiplier" style="width: 10%; height: auto;"> 
+                <span style="text-align: left;">Coin Multiplier</span>
+                <div class="item-info">
+                    <div class="ability" style="text-align: left;">ClickCoins per click x10</div>
+                    <div class="price" style="text-align: left;">💰 40 000</div>
+                </div>
+                <button>
+                     Buy
+                </button>
+            </div>
+            <div class="item">
+                <img src="https://img.icons8.com/?size=64&id=46503&format=png" alt="Power Tap" style="width: 10%; height: auto;"> 
+                <span style="text-align: left;">Power Tap</span>
+                <div class="item-info">
+                    <div class="ability" style="text-align: left;">ClickCoins per click x2</div>
+                    <div class="price" style="text-align: left;">💰 10 000</div>
+                </div>
+                <button>
+                     Buy
+                </button>
+            </div>
+            <div class="item">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAt1BMVEX///8AI8TiA+IAAMAAF8OkrOXN0O9CS8tGU8wAEsKBg9jv8PoAIcSkpuIAHcMAAL319/z//P/98/398P386/zypvL++P73y/fuie751PnzqvPX2vPn6fjd4PW5uefmP+b74/v63Prwm/DjH+P1uvXrdOvoUujoW+jlM+Xug+70sfTvlO/qberCxuyxtefqZer2wvZOX9EqN8iYn+Fvc9WHjdteZdFfbtUlLMYyQ8t4e9aSk9xWWc4aGzmUAAANyUlEQVR4nO1da2OysA6WtV5QLF6mbqJO3ebmNnwnXuZl//93HZoggiAiFOScs+eTYwh9TJomadrmcmJRb3Zar5Pnu7u75/e3h49Roy74BWmh3nycPt2dYNIaNW7dsOvRHrU8TBD/Xob/XfJpP34++1PheOoOb93AKzD6fD9PheOt27x1G8Oi++Zo9/Pb68O41RpPvyZOOq+dW7cyFBqvRw2bjL8fh/fchrWb96PHl4fjv55at25oCIyOYnl4vG+7/9kYfv+zRTbNvB3o2Dbs85QJovFo03nNeMexufwbnr/p+3DTV6bZHLi8fwTe1p4e2Nyn1LAIOPSXt8dLd3Yt2/2QWX+g+Wr1heHlew+q1s2oFWiPLS6hfu1HZPOc0fGmg4PIv5Ca00FNm2RS0do4wk+GYb/wbZnwBNsUGV1s28W+b6Pewm8Mk2tTVLSxZT42uVLIV/MDreb5xz0ajH8ptO5KfGLDTgeOWn6+oRzMWOqn37G6zTCdFoZHHQVzYptqeZVQpgCYqhqFky+NsymaD78xsLdVmeQAVXduZXsEo/GcNT8AW/XtulYgKnBQmKllCnxU5xXXLaic4zRbehlDGGNeXT+xziiKQzaKW0mWQUjkt+e8B525SbqNvQRUfle8pRmci6Jud4uBrs8WP5JsSkeRd07ZtMGgPYW352kAYpQnZ/ev/MgmF0Z3utX4Xr7I2TCp6vziGJJqmYo6G9Blvpzdf7Yx1YqxlUMO2pyzkUua4zbUs2laDQ2DRxgwHhxXQDAKLbusV29LuaI5RdP0/gy3xgcoS9dxRTdMwdCi23bldC4a9cdpA74gABqm0MiweIDw0mmY96pimuTZ6Y1rU15s43QFpp7edmugTRodL/SW5hCjbDw3FvjIQ5wcW1yo7y/JtzE0gMzEkZ7Qfk0RyGvvncTUPrJ39KRv0NDgnEG6QMV39GKtZHZ1svDeyU0AKTu6Uif7ZApF3ui8986S/L9Ppuu982bAPuPwzMKTyV6fmZ5as/BksmfNPONMeDLZG2e6p7oSnkz2PACPbxaaDLqoYXNtqcDymo9zGKHJZNBr9sQzoclAVJeteMYTaYYl0/46tYMZwAhzALZ3FpaMlQPI2FTASXYmLJnPTKabu+68WUgyGc2bYarZnm0JR8aa0flKrZVh8YDtsn7kcGRweLrLVvfnsJLNH9iXQ5Gxpg0zlgIEWPMzKJpQZF6c38gW2jhJif5vGDINFMyD96YMAOc00TqHIdNGX9u3juPmaPNUqxVuhlIzPuGcsTTzEY2P8XiIH0ORqXfG407GBn8/hI9n/gvwRyar+COTVfyRySr+yGQVf2Syij8yWcUfmazi/5BMrVLxVm5mD5fJ1PuFWXW1Wsx0LetyukimsFhvCIAVV3q26QSTWWmLIpGt8k2Fkk254L0zOwgkQ0tzJiuOQlQmb/MZ7jyBZExhABVFoVTBT1RaZJdNMBkUB1GJsaVEpSgcn5szgstkZFLu8wuVvEQU4KZ5784GLpFRyPyoVgso5aabrCraBTIKKTsv6gpXNdWnoisTuECGLN1Z2RnjpbZySo27FsFk6LbvvlopEy4aq3azXqn0KhkaR4PJEI8dhmJbsuMf+4PFarfcmY5OVixCIBl2uvSEF6jywXRrfnF/cHOI9LvKhmMQSEae908v1/eE19pXFkVZVpSDXyBvV1mwcMG+2a7nuV4lfGnKnFGnm6NQ+dd7a+q4OjjjZEw2lnMjq7Ll8ciGR4qpIxoZS7uIMV/ODYKrouTtzWUTmYxCNyuUhbYyQDryz61nCqOSYWx9NMiFNYMFN7d2QSOSUdjSqVS9JZeNur6xokUkQ0vu7t7jj2GSZ7FHuohozaTByeUBv0zKtx1topGhJc91/hz597aOTTQysjcIWHDPQEIPtKLpg4HeS924RSNDvL6YxhcVEa59g5+isTFhlMopCyoiGa/ZqsFSqEFO36iUMaYojFHZx7lLEpHIKMR7Hcns15j2OPhsMtmnGO+IJSOpVuZA4bLBuHuZnnAEk1HQaaMbw5BkzB+Sn9SGUsFkQDqbn1V1NluUf2XMI6Q2+ognQ9YDSxT9xRZGWL/HJwLhZKyUIUJfwxArpWQERJMhroX3Oe0XjZy4BgdBMBm5eGK79E2KiTbBZMipA1pZQaItHVdALBl6KhhLNCnpmWAPwJtx6s95zupHSGMrvb5WKPT7vTO2XjCZquc6LGuX51c33PsCbVAuUphcLe31vh8fwWS8oWZlJ4RMrbA3VEJxlx+ZkNJC80YYgsmc9n9RZPp7g7g9WLW08DQiJTIx+0xhTQ9UDjlhRabr06gqcTKQaY9JRt/i9D2zMvXomjOyPdHqxMn0+W4c6i4yEd5Gw/K/yU9VLxT0/VzF5J3M3A1PnIyGD4pOJVfbgiRkdVGpY6ev9XYqjNFMdbU8Ytgcngy+IM6g+YOud8llvfq/MPWtuAaDq8nMzBiS+vha58jo2zMvCAueKZEUdXVyubLi06sSc2raWTJ7wqjPGGhaJ8aoz/WcoTJZ8uxZh/OGqpdkaPBfVVF9AryFBBP5UtUW2VkytbWxLfuF75X8yttk3uqisa16Xwm+mRp9mrDHBSOX/FpisdnY5TxnyZjNKFwX7vZ0P994wAeGGF5znhscX1Uw+y9ommwc2ASQEYO8aVYVEj1DsyPcGT8j2TxYAXmTv7DoVBDqC8LJRE9pcKdbXZ5L8ORVBTUN/kqaTG0P41L0B/Adi9TduSRCHWVDGehh0mSgpIPR6A8IlozNBigkTQbCGV4EERV8L7mzfSZns4F8VtJkINAkMfxMsGaBBXsz8EKZWk2cjFY8s0tXWFR4Fw+excrDeMOUfNJkCvxFapy5ztKZ5IIDVRw9jV3CZHSu0TEcAL79Kt/V01tf5URVAdlApJAgmRmkzWKlZ3foNQeqah4jnmTJxB5mTPSLBOLKQDYz9VCYlByZCnoj8R5iRppgrgJdb5tNcmR6EBYtYz5F30CNpRHoruJ4kyQZjetyHMuMGEDVrjwPdPEsNgmS4XZV9Y1/rkKVMh4JnIabbuT5dpkJkoHxO0YAYGPFK43oJnjAmlGqMJ8aBTGo8QkNagiYoa2soTx8HvyovKFIYnL0fk2AstW1iFnAAs8lKPKFwtbCYia0yKXp2Gmvx0fmYFckNCAOo0b8/hcejZfpg2NfO25gyEDMjwX5s1QL9PhJFe/2FjXovwvqkT1urBTikwFKCPdvrm0Ql8RnPUFkzGCmUUqtfOUb9g57tf6q4cIBUVUANagqID9piQZ227M3He2rit/iiMjQUNFipEevAW6E9n7YPjEPcZU4+1OvcoOSVlXBybkOc1jRIbAGoDeHnyfOBEl44Kk79okboGXCugyHDglZNQ0b0Jy6dqjTzsymx0ClDPmNdQq1rHjw1tPhzxUU1IrtroUinMmQQjX4h1vLDCh1FqwSC65otJS4H2Ad7XSwZRpf7eA3SxQLPb73v8ISX135eOfSsoUZgijiV25Ayi8oYSsE1jao9i7oc5rMS/lzvXOcgnH/7tIyCEDkpXjfoyClEAvgQXX2sagLs8soShK6vVO99ZOCYe01enD/a78wF5FECWCP9xqFJemidXCD3oOWDUDLkgnIF2rSYRqeN2rval3mFlQSOvzbqEGKk+QT8wPQLtvnBsBRMExEXsYPOpRLJ7cyFAVjn4ea56kMOVYxUwDakA8gSZln7DGTw/bUeOBQrHmZQBQolEsnI5r6m9stgyITOWb2PwAwVSIRnxONBADO6DgKxtoDIUHjqW0hw5mE6O8nbsFoGxZ7jukCIOfPWAJPxk3g3w5RGSpBsvuGQLmkgNkSDzDBdDxoQ4NfLVHB5HIz7geIN/73cM7G8RzUGvQYskg2tq0s8RxAsU+1znQ9nlINgklwSLMw4JGsaO8ZlcxxzgaOaIlvUFXb8ehPXor0nodoyZ7szemhjsGzKigBwKmm7MJs2lXAg2mcR1NAGTKpppAN2vM3yWtxPxtaZcfxPAtYyZ3KOuCa4Tn2Mxaw8zsOtMfxkiVY9enAQL1cHxAe1ikbT0P7CkykJhvTOoAlT2K2+7TOp38+nuaw4JW/dJvWzGMPp/4FOIH1l+c7d3iZK8DhtSyldZk5XhjPe2j8ybl2C7k8t2zDVYEhhs5TUjL+xqIsIkxrflpcxnbnr+2pctx8Ih3oUIjis9jtGowwsWyO/MdDYGcbmownGwAoApGoEseifUwsLke58NVUEP6lu19Ln6dOJDX6vMDo9d3i0j0esdMvgtVX0t4WaIbLGyL+ho2HJ4vK3ffRaamVcNVOmh0GX7yCktRIae3mp03l2XlWGFRSSmoyab9AmDaUs1F3V7Kpd77ubHw5j9cqYY3rTbbTM7sNlAsH+h2NZrPRriPajeb9x+uRifug4PYvcFGFBhfhATOdgTup1DumxXqbfo5b3db4czq5c+L51alivTX0F5He+HUobHE7As+i2gNG73fn8PzlOiVYm2MXvBkXPrWFbEpn3LTOOSrvry+O09JzNb2kApeb7qGlb9EASd712xyP/lText+uU3Vr1S3a5PmN9wMr4TZyZOnXjsaDV71MJiN3PNwvSxTV9dZbT2o/uCxILvptXd7otKb/JpY7+fRv2u2M7k/P1JuVcEG4+nP7DXV7ZYhuFKr42oF6wzTIiGaj4U1RVJYS7DqpqGlulnUeedQSRZbL1zpVteoGV3pQFqsA9z8KmBHXr6sp6wAAAABJRU5ErkJggg=="
+                alt="Golden Touch" style="width: 10%; height: auto;"> 
+                <span style="text-align: left;">Golden Touch</span>
+                <div class="item-info">
+                    <div class="ability" style="text-align: left;">random bonus on click</div>
+                    <div class="price" style="text-align: left;">💰 40 000</div>
+                </div>
+                <button>
+                     Buy
+                </button>
+            </div>
+            <div class="item">
+                <img src="https://cdn-icons-png.flaticon.com/128/17748/17748647.png" alt="Coin Stream" style="width: 10%; height: auto;"> 
+                <span style="text-align: left;">Coin Stream</span>
+                <div class="item-info">
+                    <div class="ability" style="text-align: left;">random bonus on click</div>
+                    <div class="price" style="text-align: left;">💰 40 000</div>
+                </div>
+                <button>
+                     Buy
+                </button>
+            </div>
+            <div class="item">
+                <img src="https://img.icons8.com/?size=60&id=K6SoUrYEBeeS&format=png" alt="Mining Drone" style="width: 10%; height: auto;"> 
+                <span style="text-align: left;">Mining Drone</span>
+                <div class="item-info">
+                    <div class="ability" style="text-align: left;">Automates coin collection</div>
+                    <div class="price" style="text-align: left;">💰 100 000</div>
+                </div>
+                <button>
+                     Buy
+                </button>
+            </div>
+        </div>
+<div class="game-stats">
+    <div class="stats-container">
+        <div>💰 0<br>Total ClickCoins</div>
+        <hr />
+        <div>💰 20<br>Coins per Click</div>
+        <hr />
+        <div>💰 1/sec<br>Passive Income</div>
+    </div>
+    <div class="image-container" style="display: flex; align-items: center; gap: 20px;">
+        
+    </div>
+    <div class="game-button"> <img src="https://i1.sndcdn.com/artworks-1zENTnu0AC0LFUTW-GuvjSQ-t500x500.jpg" alt="Click" style="width: 500px; height: 500px;"/></div>
+</div>
+
+    </div>
+
+    <div class="footer">
+        About game | Help Center | Rules
+    </div>
+    <script src="Tapalka.js"></script>
+    <audio id="click-sound" src="muzyika-s-proydennoy-missiey-iz-gta-san-andreas.mp3" preload="auto"></audio>
+</body>
+<script>
+    const button = document.querySelector('.game-button');
+    const sound = document.getElementById('click-sound');
+
+    button.addEventListener('click', () => {
+        sound.play();
+    });
+</script>
+</html>
