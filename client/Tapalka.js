@@ -8,7 +8,7 @@ function updateBalanceDisplay(balance) {
   userCoinsDisplay.innerHTML = `💰 ${balance}`;
 }
 
-// Клік по кнопці
+
 clickButton.addEventListener('click', async () => {
   try {
     const res = await fetch('http://localhost:3000/click', { method: 'POST' });
@@ -19,7 +19,7 @@ clickButton.addEventListener('click', async () => {
   }
 });
 
-// Пасивний дохід щосекунди
+
 setInterval(async () => {
   try {
     const res = await fetch('http://localhost:3000/passive-income', { method: 'POST' });
@@ -30,7 +30,7 @@ setInterval(async () => {
   }
 }, 1000);
 
-// Завантаження апгрейдів з API
+
 fetch('http://localhost:3000/upgrades')
   .then(res => res.json())
   .then(upgrades => {
