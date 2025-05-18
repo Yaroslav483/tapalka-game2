@@ -7,12 +7,8 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-
 const users = [];
-
-
 let currentUser = null;
-
 
 function encodePassword(password) {
   return crypto.createHash('sha256').update(password).digest('hex');
@@ -60,13 +56,14 @@ app.post('/click', (req, res) => {
   res.status(200).json({ balance: currentUser.balance });
 });
 
+
 app.post('/passive-income', (req, res) => {
   if (!currentUser) return res.status(404).json({ message: 'Користувача не знайдено' });
   currentUser.balance += currentUser.passiveIncomePerSecond;
   res.status(200).json({ balance: currentUser.balance });
 });
 
-
+// CRUD апгрейдів
 let upgrades = [];
 let currentUpgradeId = 1;
 
@@ -110,9 +107,8 @@ app.delete('/upgrades/:id', (req, res) => {
   res.json({ message: 'Апгрейд видалено', deleted: deleted[0] });
 });
 
-app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`));
-"""
- app.post('/buy-upgrade', (req, res) => {
+
+app.post('/buy-upgrade', (req, res) => {
   const { upgradeId } = req.body;
 
   if (!currentUser) {
@@ -155,6 +151,7 @@ app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`
   });
 });
 
-app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`));
+
+app.listen(PORT, () => console.log(`🚀 Сервер працює на http://localhost:${PORT}`));
 
 
