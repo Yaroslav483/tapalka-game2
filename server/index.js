@@ -112,7 +112,7 @@ app.delete('/upgrades/:id', (req, res) => {
 
 app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`));
 """
-  app.post('/buy-upgrade', (req, res) => {
+ app.post('/buy-upgrade', (req, res) => {
   const { upgradeId } = req.body;
 
   if (!currentUser) {
@@ -154,4 +154,7 @@ app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`
     passiveIncomePerSecond: currentUser.passiveIncomePerSecond
   });
 });
+
+app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`));
+
 
