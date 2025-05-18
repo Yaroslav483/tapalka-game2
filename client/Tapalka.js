@@ -66,3 +66,25 @@ fetch('http://localhost:3000/upgrades')
       shop.appendChild(item);
     });
   });
+item.querySelector('button').addEventListener('click', async () => {
+  try {
+    const res = await fetch('http://localhost:3000/buy-upgrade', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ upgradeId: upgrade.id })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert(`${upgrade.name} куплено!`);
+      updateBalanceDisplay(data.balance);
+    } else {
+      alert(data.message);
+    }
+
+  } catch (err) {
+    console.error('Помилка покупки:', err);
+  }
+});
+
