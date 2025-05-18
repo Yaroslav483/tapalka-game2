@@ -112,3 +112,46 @@ app.delete('/upgrades/:id', (req, res) => {
 
 app.listen(PORT, () => console.log(` Сервер на http://localhost:${PORT}`));
 """
+  app.post('/buy-upgrade', (req, res) => {
+  const { upgradeId } = req.body;
+
+  if (!currentUser) {
+    return res.status(404).json({ message: 'Користувач не знайдений' });
+  }
+
+  const upgrade = upgrades.find(u => u.id === upgradeId);
+  if (!upgrade) {
+    return res.status(404).json({ message: 'Апгрейд не знайдено' });
+  }
+
+  if (currentUser.balance < upgrade.price) {
+    return res.status(400).json({ message: 'Недостатньо коштів для покупки' });
+  }
+
+  currentUser.balance -= upgrade.price;
+
+  switch (upgrade.type) {
+    case 'multiplyClick':
+      currentUser.coinsPerClick *= upgrade.value;
+      break;
+    case 'addClick':
+      currentUser.coinsPerClick += upgrade.value;
+      break;
+    case 'multiplyPassive':
+      currentUser.passiveIncomePerSecond *= upgrade.value;
+      break;
+    case 'addPassive':
+      currentUser.passiveIncomePerSecond += upgrade.value;
+      break;
+    default:
+      return res.status(409).json({ message: 'Невірний тип ефекту апгрейду' });
+  }
+
+  res.status(200).json({
+    message: 'Апгрейд успішно куплено',
+    balance: currentUser.balance,
+    coinsPerClick: currentUser.coinsPerClick,
+    passiveIncomePerSecond: currentUser.passiveIncomePerSecond
+  });
+});
+
