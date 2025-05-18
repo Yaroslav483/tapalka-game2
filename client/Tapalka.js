@@ -45,27 +45,6 @@ fetch('http://localhost:3000/upgrades')
         <button>Buy</button>
       `;
 
-      item.querySelector('button').addEventListener('click', async () => {
-        try {
-          const balanceRes = await fetch('http://localhost:3000/passive-income', { method: 'POST' });
-          const balanceData = await balanceRes.json();
-          let balance = balanceData.balance;
-
-          if (balance >= upgrade.price) {
-            alert(`${upgrade.name} куплено! (Ефекти ще реалізуються на сервері)`);
-          } else {
-            alert("Недостатньо монет!");
-          }
-
-          updateBalanceDisplay(balance);
-        } catch (err) {
-          console.error("Помилка покупки апгрейду:", err);
-        }
-      });
-
-      shop.appendChild(item);
-    });
-  });
 item.querySelector('button').addEventListener('click', async () => {
   try {
     const res = await fetch('http://localhost:3000/buy-upgrade', {
@@ -87,4 +66,5 @@ item.querySelector('button').addEventListener('click', async () => {
     console.error('Помилка покупки:', err);
   }
 });
+
 
