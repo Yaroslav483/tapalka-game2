@@ -69,6 +69,3 @@ fetch('http://localhost:3000/upgrades')
       shop.appendChild(item);
     });
   });
-
-
-
