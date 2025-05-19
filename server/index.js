@@ -64,8 +64,35 @@ app.post('/passive-income', (req, res) => {
 });
 
 // CRUD апгрейдів
-let upgrades = [];
-let currentUpgradeId = 1;
+let upgrades = [
+  {
+    id: 1,
+    name: "Click Booster",
+    description: "Додає +1 до кожного кліку",
+    price: 50,
+    type: "addClick",
+    value: 1
+  },
+  {
+    id: 2,
+    name: "Auto Miner",
+    description: "Пасивний дохід +2",
+    price: 100,
+    type: "addPassive",
+    value: 2
+  },
+  {
+    id: 3,
+    name: "Click x2",
+    description: "Клік множиться на 2",
+    price: 200,
+    type: "multiplyClick",
+    value: 2
+  }
+];
+let currentUpgradeId = 4;
+console.log('🟢 Список апгрейдів:', upgrades);
+
 
 function validateUpgrade(data) {
   const { name, description, price } = data;
@@ -74,6 +101,8 @@ function validateUpgrade(data) {
   if (typeof price !== 'number' || price < 0) return 'Поле price має бути числом ≥ 0';
   return null;
 }
+
+
 
 app.get('/upgrades', (req, res) => res.json(upgrades));
 
@@ -153,5 +182,3 @@ app.post('/buy-upgrade', (req, res) => {
 
 
 app.listen(PORT, () => console.log(`🚀 Сервер працює на http://localhost:${PORT}`));
-
-
