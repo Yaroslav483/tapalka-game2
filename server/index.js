@@ -91,7 +91,7 @@ let upgrades = [
   }
 ];
 let currentUpgradeId = 4;
-console.log('🟢 Список апгрейдів:', upgrades);
+console.log(' Список апгрейдів:', upgrades);
 
 
 function validateUpgrade(data) {
