@@ -8,6 +8,42 @@ function updateBalanceDisplay(balance) {
   userCoinsDisplay.innerHTML = `💰 ${balance}`;
 }
 
+async function autoLogin() {
+  try {
+    const email = 'test@example.com';
+    const password = 'testpassword';
+
+   
+    let res = await fetch('http://localhost:3000/sign-in', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    
+    if (res.status === 401) {
+      await fetch('http://localhost:3000/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      
+      res = await fetch('http://localhost:3000/sign-in', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+    }
+
+    const data = await res.json();
+    console.log(" Логін успішний:", data.token);
+  } catch (err) {
+    console.error(" Помилка входу:", err);
+  }
+}
+
+autoLogin();
 
 clickButton.addEventListener('click', async () => {
   try {
