@@ -13,14 +13,12 @@ async function autoLogin() {
     const email = 'test@example.com';
     const password = 'testpassword';
 
-   
     let res = await fetch('http://localhost:3000/sign-in', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
     });
 
-    
     if (res.status === 401) {
       await fetch('http://localhost:3000/sign-up', {
         method: 'POST',
@@ -28,7 +26,6 @@ async function autoLogin() {
         body: JSON.stringify({ email, password })
       });
 
-      
       res = await fetch('http://localhost:3000/sign-in', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -37,71 +34,82 @@ async function autoLogin() {
     }
 
     const data = await res.json();
-    console.log(" Логін успішний:", data.token);
+    console.log("✅ Логін успішний:", data.token);
+    return true;
   } catch (err) {
-    console.error(" Помилка входу:", err);
+    console.error("❌ Помилка входу:", err);
+    return false;
   }
 }
 
-autoLogin();
-
-clickButton.addEventListener('click', async () => {
-  try {
-    const res = await fetch('http://localhost:3000/click', { method: 'POST' });
-    const data = await res.json();
-    if (res.ok) updateBalanceDisplay(data.balance);
-  } catch (err) {
-    console.error("Помилка при кліку:", err);
+async function startGame() {
+  const loggedIn = await autoLogin();
+  if (!loggedIn) {
+    alert('Помилка входу. Спробуйте пізніше.');
+    return;
   }
-});
 
-
-setInterval(async () => {
-  try {
-    const res = await fetch('http://localhost:3000/passive-income', { method: 'POST' });
-    const data = await res.json();
-    if (res.ok) updateBalanceDisplay(data.balance);
-  } catch (err) {
-    console.error("Помилка пасивного доходу:", err);
-  }
-}, 1000);
-
-
-fetch('http://localhost:3000/upgrades')
-  .then(res => res.json())
-  .then(upgrades => {
-    shop.innerHTML = '';
-    upgrades.forEach(upgrade => {
-      const item = document.createElement('div');
-      item.className = 'item';
-      item.innerHTML = `
-        <span><b>${upgrade.name}</b></span>
-        <div class="ability">${upgrade.description}</div>
-        <div class="price">💰 ${upgrade.price}</div>
-        <button>Buy</button>
-      `;
-
-      item.querySelector('button').addEventListener('click', async () => {
-        try {
-          const res = await fetch('http://localhost:3000/buy-upgrade', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ upgradeId: upgrade.id })
-          });
-
-          const data = await res.json();
-
-          if (res.ok) {
-            alert(`${upgrade.name} куплено!`);
-            updateBalanceDisplay(data.balance);
-          } else {
-            alert(data.message);
-          }
-        } catch (err) {
-          console.error('Помилка покупки:', err);
-        }
-      });
-
-      shop.appendChild(item);
-    });
+  // Клік
+  clickButton.addEventListener('click', async () => {
+    try {
+      const res = await fetch('http://localhost:3000/click', { method: 'POST' });
+      const data = await res.json();
+      if (res.ok) updateBalanceDisplay(data.balance);
+    } catch (err) {
+      console.error("Помилка при кліку:", err);
+    }
   });
+
+  // Пасивний дохід
+  setInterval(async () => {
+    try {
+      const res = await fetch('http://localhost:3000/passive-income', { method: 'POST' });
+      const data = await res.json();
+      if (res.ok) updateBalanceDisplay(data.balance);
+    } catch (err) {
+      console.error("Помилка пасивного доходу:", err);
+    }
+  }, 1000);
+
+  // Завантаження апгрейдів
+  fetch('http://localhost:3000/upgrades')
+    .then(res => res.json())
+    .then(upgrades => {
+      shop.innerHTML = '';
+      upgrades.forEach(upgrade => {
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.innerHTML = `
+          <span><b>${upgrade.name}</b></span>
+          <div class="ability">${upgrade.description}</div>
+          <div class="price">💰 ${upgrade.price}</div>
+          <button>Buy</button>
+        `;
+
+        item.querySelector('button').addEventListener('click', async () => {
+          try {
+            const res = await fetch('http://localhost:3000/buy-upgrade', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ upgradeId: upgrade.id })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+              alert(`${upgrade.name} куплено!`);
+              updateBalanceDisplay(data.balance);
+            } else {
+              alert(data.message);
+            }
+          } catch (err) {
+            console.error('Помилка покупки:', err);
+          }
+        });
+
+        shop.appendChild(item);
+      });
+    });
+}
+
+startGame();
